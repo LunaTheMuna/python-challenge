@@ -1,0 +1,8 @@
+There were 3521001 votes cast.
+The vote percentages were 
+Khan        63.000011
+Correy      19.999994
+Li          13.999996
+O'Tooley     2.999999
+Name: Candidate, dtype: float64
+And the winner is Khan
