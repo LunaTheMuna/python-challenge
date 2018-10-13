@@ -1,14 +1,39 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[10]:
 
 
 # Import Dependencies
 import pandas as pd
+import os
+import csv
+import sys
 
 
-# In[2]:
+# In[11]:
+
+
+class Logger(object):
+    def __init__(self,logfile):
+        self.terminal = sys.stdout
+        self.log = open(logfile, "a")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)  
+
+    def flush(self):
+        #this flush method is needed for python 3 compatibility.
+        #this handles the flush command by doing nothing.
+        #you might want to specify some extra behavior here.
+        pass    
+
+log="results.txt"
+sys.stdout = Logger(log)
+
+
+# In[12]:
 
 
 # Create a reference the CSV file desired
@@ -24,7 +49,7 @@ num_votes =  election_df1["Voter ID"].count()
 print("There were " + str(num_votes) + " votes cast.")
 
 
-# In[3]:
+# In[13]:
 
 
 # list the candidates 
@@ -32,7 +57,7 @@ candidates = election_df1["Candidate"].unique()
 candidates
 
 
-# In[4]:
+# In[14]:
 
 
 # total votes by candidate
@@ -40,7 +65,7 @@ candidate_vote_counts = election_df1["Candidate"].value_counts()
 candidate_vote_counts.head()
 
 
-# In[9]:
+# In[15]:
 
 
 # The percentage of votes by candidate
@@ -49,7 +74,7 @@ print("The vote percentages were ")
 print(candidate_percentage)
 
 
-# In[6]:
+# In[16]:
 
 
 # Winner based on popular vote
