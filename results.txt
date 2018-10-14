@@ -1,8 +1,0 @@
-Financial Analysis
------------------------
-Total Months 86
-Net PnL :38382578
-The average monthly PnL delta is 567769.2588235295
-greatest monthly pnl increase is 1926159 which occurred in Feb-2012
-greatest monthly pnl decrease is -2196167 which occurred in Sep-2013
-Results also written to results.txt
