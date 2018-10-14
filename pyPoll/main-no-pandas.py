@@ -57,13 +57,14 @@ with open(csv_path, newline="") as csvfile:
     
     winner = ""
     winnerVotes = int(max(vote_tally.values()))
+
     for candidate in vote_tally :
-       vote_percentage[candidate] = vote_tally[candidate] / allVoteCounter * 100
+       vote_percentage[candidate] = ("{0:.2f}%".format(vote_tally[candidate] / allVoteCounter * 100))
        if(vote_tally[candidate] == winnerVotes) :
            winner = candidate
 
     for k,v in vote_percentage.items() : 
-        print (f'Candidate: ' + k, str(v) + '% ('+ str(vote_tally[k]) + ')')
+        print (f'Candidate: ' + k, str(v) + ' ('+ str(vote_tally[k]) + ')')
 
     print('And the winner is: '+ winner)
 
